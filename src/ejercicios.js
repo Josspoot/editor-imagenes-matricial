@@ -341,9 +341,9 @@ function voltearHorizontal(matriz) {
  * const invertido = voltearVertical(matriz);
  */
 function voltearVertical(matriz) {
-  // TODO: Implementar volteo vertical
-
-  return []; // REEMPLAZAR
+  const resultado = copiarMatriz(matriz);
+  resultado.reverse();
+  return resultado;
 }
 
 /**
