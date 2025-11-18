@@ -1,9 +1,9 @@
 // ============================================
 // EDITOR DE IMÁGENES CON ÁLGEBRA MATRICIAL
 // ============================================
-// Nombre del estudiante: Josue Enmanuel Poot Mateo
-// Fecha: 18/11/2025
-// Grupo: 1-B
+// Nombre del estudiante: _________________
+// Fecha: _________________
+// Grupo: _________________
 
 const { PNG } = require("pngjs");
 const fs = require("fs");
