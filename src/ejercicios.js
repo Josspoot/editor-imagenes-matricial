@@ -486,16 +486,31 @@ function aplicarSepia(matriz) {
  * const bordes = detectarBordes(matriz, 50);
  */
 function detectarBordes(matriz, umbral = 50) {
-  // TODO: Implementar detección de bordes
+  const grises = convertirEscalaGrises(matriz);
+  const filas = grises.length;
+  const columnas = grises[0].length;
 
-  // 1. Convertir a escala de grises primero
-  // const grises = convertirEscalaGrises(matriz);
+  const resultado = crearMatrizVacia(filas, columnas);
 
-  // 2. Para cada pixel (excepto bordes de la imagen):
-  //    - Comparar con pixel derecho y pixel inferior
-  //    - Si diferencia > umbral, marcar como borde
+  for (let i = 0; i < filas; i++) {
+    for (let j = 0; j < columnas; j++) {
+      let borde = 0;
 
-  return []; // REEMPLAZAR
+      if (j + 1 < columnas) {
+        borde = Math.abs(grises[i][j].r - grises[i][j + 1].r);
+      }
+
+      if (i + 1 < filas) {
+        borde = Math.max(borde, Math.abs(grises[i][j].r - grises[i + 1][j].r));
+      }
+
+      const valor = borde > umbral ? 255 : 0;
+
+      resultado[i][j] = { r: valor, g: valor, b: valor, a: 255 };
+    }
+  }
+
+  return resultado;
 }
 
 // ============================================
